@@ -87,7 +87,7 @@ RCT_EXPORT_METHOD(showImagePicker:(NSDictionary *)options callback:(RCTResponseS
         of the location to show the popover in this case. For simplicity, we'll just display it on the bottom center of the screen
         to mimic an action sheet */
         self.alertController.popoverPresentationController.sourceView = root.view;
-        self.alertController.popoverPresentationController.sourceRect = CGRectMake(root.view.bounds.size.width / 2.0, root.view.bounds.size.height, 1.0, 1.0);
+        self.alertController.popoverPresentationController.sourceRect = CGRectMake(root.view.bounds.size.width / 2.0,UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ? root.view.bounds.size.height / 2.0 : root.view.bounds.size.height, 1.0, 1.0);
 
         if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
             self.alertController.popoverPresentationController.permittedArrowDirections = 0;
